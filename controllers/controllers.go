@@ -14,6 +14,7 @@ func GetAllMovies(w http.ResponseWriter, r *http.Request) {
 	allMovies := db.GetAll()
 	json.NewEncoder(w).Encode(allMovies)
 }
+
 func CreateMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "POST")
@@ -23,6 +24,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 	db.InsertOne(movie)
 	json.NewEncoder(w).Encode(movie)
 }
+
 func MarkWatched(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "PUT")
@@ -31,6 +33,7 @@ func MarkWatched(w http.ResponseWriter, r *http.Request) {
 	db.UpdateOne(params["id"])
 	json.NewEncoder(w).Encode(params["id"])
 }
+
 func DeleteMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "DELETE")
@@ -39,6 +42,7 @@ func DeleteMovie(w http.ResponseWriter, r *http.Request) {
 	db.DeleteOne(params["id"])
 	json.NewEncoder(w).Encode(params["id"])
 }
+
 func DeleteAllMovies(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
 	w.Header().Set("Access-Control-Allow-Methods", "DELETE")

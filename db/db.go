@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const connectionString = "mongodb://root:code1234@localhost:32768"
+const connectionString = "mongodb://localhost:32768"
 const dbName = "netflix"
 const colName = "watchlist"
 
