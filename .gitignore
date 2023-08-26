@@ -1,3 +1,2 @@
-hitflix
 .env
-bin/*
+./bin/*
